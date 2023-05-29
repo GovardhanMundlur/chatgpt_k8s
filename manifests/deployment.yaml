@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatgpt-deployment
+  labels:
+    app: chatgpt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chatgpt
+  template:
+    metadata:
+      labels:
+        app: chatgpt
+    spec:
+      containers:
+      - name: chatgpt
+        image: gv3br10ee032/chatgpt:v1
